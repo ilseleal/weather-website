@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 
 //Initialize Express app
 const app = express()
+//Access Heroku port number OR if Heroku doesn't set the port, use 3000
+const port = process.env.PORT || 3000
 
 //-----------------------------------------------------------------------------
 //Define paths for Express configuration
@@ -103,6 +105,6 @@ app.get('*', (req, res ) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
