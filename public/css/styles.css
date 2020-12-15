@@ -33,6 +33,11 @@ header a {
     text-decoration: none;
 }
 
+a {
+    color: #888888;
+    text-decoration: none;
+}
+
 .portrait {
     width: 250px;
 }
