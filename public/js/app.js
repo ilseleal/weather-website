@@ -2,6 +2,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
+const img1 = document.querySelector('#img1')
 
 weatherForm.addEventListener('submit', (e) => {
     //Evita que se recargue por completo la página
