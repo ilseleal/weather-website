@@ -19,6 +19,7 @@ weatherForm.addEventListener('submit', (e) => {
             else {
                 message1.textContent = data.location
                 message2.textContent = data.forecast
+                img1.src = data.icon
             }
         })
     })

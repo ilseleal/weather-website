@@ -38,13 +38,19 @@ const forecast = (latitude, longitude, callback) => {
             callback('Could not reach weather service. Check your Internet connection.', undefined)
         else if (body.error)
             callback(response.body.error, undefined)
-        else 
+        else {
             //In this line, I forgot to pass úndefined first, so the response
             //was being passed as an error.
-            callback(undefined, body.current.weather_descriptions[0] + 
-                    '. The temperature is ' + body.current.temperature + '°C' +
-                    ' and it feels like: ' + body.current.feelslike + '°C.' +
-                    ' Humidity is: ' + body.current.humidity + '%.')
+            const forecast_string = body.current.weather_descriptions[0] + 
+            '. The temperature is ' + body.current.temperature + '°C' +
+            ' and it feels like: ' + body.current.feelslike + '°C.' +
+            ' Humidity is: ' + body.current.humidity + '%.'
+
+            callback(undefined, {
+                forecast_string,
+                forecast_img: body.current.weather_icons[0]
+            })
+        }
     })
 }
 
