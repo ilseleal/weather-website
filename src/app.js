@@ -32,14 +32,14 @@ app.get('', (req, res) => {
     //extensión de archivo hbs.
     res.render('index', {
         title: "Weather app",
-        name: "Los Gogos"
+        name: "Weather"
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: "About dynamic page",
-        name: "Los Gogos"
+        name: "About"
     })
 })
 
@@ -47,7 +47,7 @@ app.get("/help", (req, res) => {
     res.render('help', {
         message: "This is a help message",
         title: "Help page",
-        name: "Los Gógoros"
+        name: "Help"
     })
 })
 
@@ -93,7 +93,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404 Help Page',
-        name: 'Guga... GoGA',
+        name: 'Help page not found',
         message: 'This help page was not found'
     })    
 })
@@ -101,7 +101,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res ) => {
     res.render('404', {
         title: '404 Page',
-        name: 'Guguis',
+        name: 'Not found',
         message: '404 Page not found'
     })
 })
